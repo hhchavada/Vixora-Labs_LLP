@@ -1,0 +1,233 @@
+@import "tailwindcss";
+
+/* 
+ * Vixora Labs - Global Styles & Design Tokens 
+ * Architecture: CSS Variables -> Tailwind v4 @theme mapping
+ * Priority: Dark mode default, structured for future light mode.
+ */
+
+@layer base {
+  :root {
+    /* Dark Theme (Default) */
+    --background: 0 0% 0%; /* #000000 */
+    --foreground: 0 0% 100%;    /* #FFFFFF */
+    
+    --primary: 221.2 83.2% 53.3%; /* #2563EB */
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 262.1 83.3% 57.8%; /* #7C3AED */
+    --secondary-foreground: 0 0% 100%;
+    
+    --accent: 199.4 95.5% 59.6%; /* #38BDF8 */
+    --accent-foreground: 0 0% 100%;
+
+    --surface: 240 5.9% 10%; /* #18181B */
+    --surface-foreground: 0 0% 100%;
+    
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%; /* #A1A1AA */
+    
+    --border: 240 3.7% 15.9%; /* #27272A */
+    --ring: 221.2 83.2% 53.3%; /* Primary color for focus rings */
+    
+    --success: 160 84% 39%; /* #10B981 */
+    --warning: 38 92% 50%; /* #F59E0B */
+    --danger: 348 83% 47%; /* #EF4444 */
+
+    /* Radius System */
+    --radius-sm: 6px;
+    --radius-md: 8px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
+    --radius-full: 9999px;
+  }
+
+  .light {
+    /* Light Theme (Prepared for future implementation) */
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 262.1 83.3% 57.8%;
+    --secondary-foreground: 0 0% 100%;
+    
+    --accent: 199.4 95.5% 59.6%;
+    --accent-foreground: 240 10% 3.9%;
+    
+    --surface: 0 0% 98%;
+    --surface-foreground: 240 10% 3.9%;
+
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    
+    --border: 240 5.9% 90%;
+    --ring: 221.2 83.2% 53.3%;
+
+    --success: 160 84% 39%;
+    --warning: 38 92% 50%;
+    --danger: 348 83% 47%;
+  }
+}
+
+/* Tailwind v4 Theme Extension */
+@theme {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-surface: hsl(var(--surface));
+  --color-surface-foreground: hsl(var(--surface-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-border: hsl(var(--border));
+  --color-ring: hsl(var(--ring));
+  
+  --color-success: hsl(var(--success));
+  --color-warning: hsl(var(--warning));
+  --color-danger: hsl(var(--danger));
+
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
+  --radius-xl: var(--radius-xl);
+  --radius-full: var(--radius-full);
+
+  --font-sans: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, monospace;
+
+  /* Custom Spacing System (AGENTS.md) */
+  --spacing-4: 4px;
+  --spacing-8: 8px;
+  --spacing-12: 12px;
+  --spacing-16: 16px;
+  --spacing-24: 24px;
+  --spacing-32: 32px;
+  --spacing-48: 48px;
+  --spacing-64: 64px;
+  --spacing-96: 96px;
+  --spacing-128: 128px;
+
+  /* Custom Motion System */
+  --ease-vixora: cubic-bezier(0.32, 0.72, 0, 1);
+  --duration-fast: 200ms;
+  --duration-normal: 400ms;
+  --duration-slow: 800ms;
+
+  --animate-marquee: marquee 30s linear infinite;
+
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-50% - 1.25rem)); } /* -50% minus half gap */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    @apply scroll-smooth;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    /* Premium Selection Color */
+    ::selection {
+      @apply bg-primary/30 text-white;
+    }
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-background;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-muted rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-border;
+  }
+}
+
+@layer utilities {
+  /* Glassmorphism Utility */
+  .glass {
+    @apply bg-white/5 backdrop-blur-md border border-white/10;
+  }
+
+  /* Subtle Gradient Glow Utility */
+  .glow-primary {
+    @apply relative;
+  }
+  .glow-primary::before {
+    content: '';
+    @apply absolute inset-0 -z-10 bg-primary/20 blur-2xl rounded-full;
+  }
+  
+  /* Text Gradients */
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary;
+  }
+}
+
+/* Hero Concentric Circles Animation from Codewinglet */
+.hero-glow-box {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: -1;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  position: absolute;
+}
+
+.hero-glow-box span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  box-sizing: border-box;
+  width: 1300px;
+  height: 1300px;
+  /* Premium Glassmorphism Ring */
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 50%;
+  animation: hero-glow-animate 6s linear infinite;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0);
+  background: transparent;
+  /* Optimized Glow (Single shadow for better GPU performance) */
+  box-shadow: 0 0 200px rgba(255, 255, 255, 0.15);
+  /* Hardware Acceleration to fix lag */
+  will-change: transform, opacity;
+}
+
+.hero-glow-box span:nth-child(10n+1) {
+  opacity: 0;
+}
+
+@keyframes hero-glow-animate {
+  0% {
+      transform: translate(-50%, -50%) scale(0);
+      opacity: 0;
+  }
+  20% {
+      opacity: 1;
+  }
+  100% {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 0;
+  }
+}
