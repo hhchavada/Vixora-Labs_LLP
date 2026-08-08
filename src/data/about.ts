@@ -15,17 +15,17 @@ export const aboutData = {
     {
       title: "Innovation, Intelligence, Growth",
       description: "Building AI-powered, scalable, and future-ready digital solutions that help businesses innovate, grow, and stay ahead of the competition.",
-      image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=800&q=80"
+      image: "/images/card-1.png"
     },
     {
       title: "Strategy, Technology, Excellence",
       description: "Combining creative thinking with modern technologies to design, develop, and deliver high-quality web, mobile, SaaS, and AI solutions.",
-      image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80"
+      image: "/images/card-2.png"
     },
     {
       title: "Reliable Solutions, Lasting Partnerships",
       description: "Creating secure, high-performance software backed by transparent communication, trusted collaboration, and long-term business success.",
-      image: "https://images.unsplash.com/photo-1556761175-4b46a572b786?w=800&q=80"
+      image: "/images/card-3.png"
     }
   ]
 };
