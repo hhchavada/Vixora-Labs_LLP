@@ -27,7 +27,7 @@ export function Navbar() {
   const shouldHide = isScrolled && direction === "down" && !isMobileMenuOpen;
   
   // Force dark background on pages that have a light background at the top
-  const forceDarkBg = pathname === "/terms" || pathname === "/privacy";
+  const forceDarkBg = pathname === "/terms" || pathname === "/privacy" || pathname === "/about";
 
   return (
     <>
@@ -50,7 +50,7 @@ export function Navbar() {
             >
               <div className="flex items-center gap-2">
                 <div className="w-8 h-8 rounded-full border-[1.5px] border-white flex items-center justify-center font-bold text-[15px] tracking-tighter text-white">V</div>
-                <span className="text-xl md:text-[22px] font-medium tracking-wide text-white">Vixora Labs</span>
+                <span className="text-xl md:text-[22px] font-medium tracking-wide text-white">Vixora Labs LLP</span>
               </div>
             </Link>
           </div>

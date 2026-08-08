@@ -6,10 +6,10 @@ export const aboutData = {
     description2: "Our team combines technical expertise with forward-thinking innovation to build reliable, high-performance digital products. From custom software and SaaS platforms to intelligent automation and cloud solutions, we create technology that empowers businesses, accelerates growth, and delivers lasting value."
   },
   statistics: [
-    { value: "60+", label: "Happy Clients" },
-    { value: "80+", label: "Successful Projects" },
-    { value: "7+", label: "Years in the IT Industry" },
-    { value: "100%", label: "Client's satisfaction" }
+    { value: "10+", label: "Projects Delivered" },
+    { value: "7+", label: "Happy Clients" },
+    { value: "15+", label: "Technology Expertise" },
+    { value: "100%", label: "Quality Commitment" }
   ],
   cards: [
     {
