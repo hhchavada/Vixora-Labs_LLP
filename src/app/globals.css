@@ -209,8 +209,8 @@
   top: 50%;
   left: 50%;
   box-sizing: border-box;
-  width: 1300px;
-  height: 1300px;
+  width: 600px;
+  height: 600px;
   /* Premium Glassmorphism Ring */
   border: 1px solid rgba(255, 255, 255, 0.04);
   border-radius: 50%;
@@ -218,10 +218,18 @@
   opacity: 0;
   transform: translate(-50%, -50%) scale(0);
   background: transparent;
-  /* Optimized Glow (Single shadow for better GPU performance) */
-  box-shadow: 0 0 200px rgba(255, 255, 255, 0.15);
+  /* Optimized Glow for mobile to prevent text blinking (GPU overload) */
+  box-shadow: 0 0 100px rgba(255, 255, 255, 0.1);
   /* Hardware Acceleration to fix lag */
   will-change: transform, opacity;
+}
+
+@media (min-width: 768px) {
+  .hero-glow-box span {
+    width: 1300px;
+    height: 1300px;
+    box-shadow: 0 0 200px rgba(255, 255, 255, 0.15);
+  }
 }
 
 .hero-glow-box span:nth-child(10n+1) {
