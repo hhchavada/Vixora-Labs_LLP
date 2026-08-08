@@ -74,7 +74,7 @@ const services = [
 
 export function HeroSection() {
   return (
-    <div className="relative z-10 bg-transparent mb-0 md:h-screen h-[100dvh] flex items-center justify-center -mt-[126px] md:-mt-[138px] lg:-mt-[134px] pt-[126px] md:pt-[138px] lg:pt-[134px]">
+    <div className="relative z-10 bg-transparent mb-0 h-[calc(100vh-48px)] flex items-center justify-center">
       
       {/* Large Background Glow / Concentric Circles Animation */}
       <div className="absolute inset-0 pointer-events-none -z-10 flex items-center justify-center">

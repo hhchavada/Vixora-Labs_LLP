@@ -211,15 +211,15 @@
   box-sizing: border-box;
   width: 600px;
   height: 600px;
-  /* Premium Glassmorphism Ring */
-  border: 1px solid rgba(255, 255, 255, 0.04);
+  /* Premium Glassmorphism Ring - increased visibility */
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 50%;
   animation: hero-glow-animate 6s linear infinite;
   opacity: 0;
   transform: translate(-50%, -50%) scale(0);
   background: transparent;
-  /* Optimized Glow for mobile to prevent text blinking (GPU overload) */
-  box-shadow: 0 0 100px rgba(255, 255, 255, 0.1);
+  /* Optimized Glow for mobile - increased visibility */
+  box-shadow: 0 0 100px rgba(255, 255, 255, 0.25);
   /* Hardware Acceleration to fix lag */
   will-change: transform, opacity;
 }
@@ -228,7 +228,7 @@
   .hero-glow-box span {
     width: 1300px;
     height: 1300px;
-    box-shadow: 0 0 200px rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0 200px rgba(255, 255, 255, 0.25);
   }
 }
 
