@@ -165,9 +165,9 @@ export function Footer() {
             All rights reserved &copy; 2026 - Vixora Labs LLP
           </p>
           <div className="flex items-center gap-3 md:gap-5 text-[#a3a3a3]">
-            <Link href="#" className="text-[14px] font-light hover:text-white transition-colors">Terms & Conditions</Link>
+            <Link href="/terms" className="text-[14px] font-light hover:text-white transition-colors">Terms & Conditions</Link>
             <span className="w-[1px] h-[14px] bg-[#a3a3a3]"></span>
-            <Link href="#" className="text-[14px] font-light hover:text-white transition-colors">Privacy Policy</Link>
+            <Link href="/privacy" className="text-[14px] font-light hover:text-white transition-colors">Privacy Policy</Link>
           </div>
         </Container>
       </div>

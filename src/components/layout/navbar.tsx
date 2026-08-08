@@ -6,6 +6,7 @@ import { Menu } from "lucide-react";
 import { motion } from "framer-motion";
 
 import { cn } from "@/lib/utils";
+import { usePathname } from "next/navigation";
 import { mainNavigation } from "@/data/navigation";
 import { useScrollData } from "@/hooks/use-scroll";
 import { NAVBAR_HEIGHT } from "@/config/navigation";
@@ -16,9 +17,13 @@ import { Container } from "@/components/ui/container";
 export function Navbar() {
   const { direction, isScrolled } = useScrollData();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
+  const pathname = usePathname();
 
   // Hide navbar on scroll down if scrolled past threshold, show on scroll up
   const shouldHide = isScrolled && direction === "down" && !isMobileMenuOpen;
+  
+  // Force dark background on pages that have a light background at the top
+  const forceDarkBg = pathname === "/terms" || pathname === "/privacy";
 
   return (
     <>
@@ -26,7 +31,7 @@ export function Navbar() {
         id="header"
         className={cn(
           "fixed top-[48px] flex items-center z-50 w-full sm:py-5 md:py-0 lg:py-0 lg:px-20 transition-all duration-300",
-          isScrolled ? "bg-[#141414] shadow-md" : "bg-transparent"
+          (isScrolled || forceDarkBg) ? "bg-[#141414] shadow-md" : "bg-transparent"
         )}
       >
         {/* Inner Wrapper (max-w 1410px) */}
