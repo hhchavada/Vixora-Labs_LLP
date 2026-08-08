@@ -89,7 +89,7 @@ export function HeroSection() {
       </div>
 
       {/* Inner Container */}
-      <div className="xl:px-20 lg:px-[120px] md:px-10 sm:px-0 px-0 z-10 w-full max-w-[1410px] mx-auto flex flex-col items-center">
+      <div className="relative xl:px-20 lg:px-[120px] md:px-10 sm:px-0 px-0 z-10 w-full max-w-[1410px] mx-auto flex flex-col items-center">
         
         {/* Main Heading with Typewriter */}
         <div className="min-h-6 lg:text-[55px] md:text-[45px] sm:text-[32px] text-[20px] text-center text-white lg:leading-[70px] md:leading-[60px] sm:leading-10 leading-[30px] font-semibold max-w-[1220px] mx-auto px-6 md:px-0 flex flex-col items-center">
