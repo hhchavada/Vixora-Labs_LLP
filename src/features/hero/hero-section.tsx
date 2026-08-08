@@ -76,17 +76,8 @@ export function HeroSection() {
   return (
     <div className="relative z-10 bg-transparent mb-0 md:h-[calc(100vh-156px)] h-[calc(100vh-170px)] flex items-center justify-center">
       
-      {/* Large Background Glow / Concentric Circles Animation */}
-      <div className="absolute inset-0 pointer-events-none -z-10 flex items-center justify-center">
-        <div className="hero-glow-box absolute">
-          <span style={{ animationDelay: "1s" }}></span>
-          <span style={{ animationDelay: "2s" }}></span>
-          <span style={{ animationDelay: "3s" }}></span>
-          <span style={{ animationDelay: "4s" }}></span>
-          <span style={{ animationDelay: "5s" }}></span>
-          <span style={{ animationDelay: "6s" }}></span>
-        </div>
-      </div>
+      {/* Background is clean as per Codewinglet reference */}
+      <div className="absolute inset-0 pointer-events-none -z-10 bg-black/20" />
 
       {/* Inner Container */}
       <div className="xl:px-20 lg:px-[120px] md:px-10 sm:px-0 px-0 z-10 w-full max-w-[1410px] mx-auto flex flex-col items-center">
