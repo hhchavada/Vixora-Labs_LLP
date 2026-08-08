@@ -15,8 +15,8 @@ export function AnnouncementBar({ children, className }: AnnouncementBarProps) {
         className
       )}
     >
-      <div className="max-w-[1410px] w-full flex items-center justify-center md:flex-row flex-col">
-        <p className="min-h-6 text-center lg:text-left text-[14px] text-black flex items-center gap-2">
+      <div className="max-w-[1410px] w-full flex items-center justify-center">
+        <p className="min-h-6 text-center lg:text-left text-[12px] sm:text-[14px] text-black flex items-center justify-center flex-wrap gap-x-2 gap-y-1">
           {children}
         </p>
       </div>

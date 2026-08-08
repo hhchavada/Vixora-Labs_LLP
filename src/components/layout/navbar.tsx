@@ -39,7 +39,10 @@ export function Navbar() {
               className="flex items-center justify-start w-[191px] md:w-[240px] xl:w-[252px] cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
               aria-label="Vixora Labs Home"
             >
-              <span className="text-xl md:text-2xl font-bold tracking-tighter">Vixora Labs</span>
+              <div className="flex items-center gap-2">
+                <div className="w-8 h-8 rounded-full border-[1.5px] border-white flex items-center justify-center font-bold text-[15px] tracking-tighter text-white">V</div>
+                <span className="text-xl md:text-[22px] font-medium tracking-wide text-white">Vixora Labs</span>
+              </div>
             </Link>
           </div>
 

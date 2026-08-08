@@ -16,10 +16,10 @@ export function ServicesSection() {
         
         {/* Header */}
         <div>
-          <h1 className="text-[#141414] font-medium lg:text-[40px] md:text-[36px] sm:text-[28px] text-[28px] leading-tight">
+          <h1 className="text-[#141414] font-medium lg:text-[40px] md:text-[36px] sm:text-[28px] text-[26px] leading-tight">
             Our services
           </h1>
-          <p className="text-[#141414] text-[20px] font-light mt-1.5 min-h-6">
+          <p className="text-[#141414] text-[16px] md:text-[20px] font-light mt-1.5 min-h-6">
             Custom software, AI, and digital solutions designed to accelerate your business growth and long-term success.
           </p>
         </div>
@@ -32,28 +32,66 @@ export function ServicesSection() {
             {servicesList.map((service, index) => {
               const isActive = index === activeTab;
               return (
-                <button
-                  key={service.title}
-                  onClick={() => setActiveTab(index)}
-                  className={`flex items-center justify-between text-left py-5 border-b border-gray-200 transition-colors duration-300 ${
-                    isActive ? "text-[#141414] font-medium" : "text-[#606060] font-light hover:text-[#141414]"
-                  }`}
-                >
-                  <span className="text-[18px]">{service.title}</span>
-                  {isActive && <ArrowUpRight className="w-5 h-5 text-[#141414]" />}
-                </button>
+                <div key={service.title} className="flex flex-col border-b border-gray-200">
+                  <button
+                    onClick={() => setActiveTab(index)}
+                    className={`flex items-center justify-between text-left py-5 transition-colors duration-300 ${
+                      isActive ? "text-[#141414] font-medium" : "text-[#606060] font-light hover:text-[#141414]"
+                    }`}
+                  >
+                    <span className="text-[16px] md:text-[18px]">{service.title}</span>
+                    {isActive ? <ArrowUpRight className="w-5 h-5 text-[#141414] shrink-0" /> : <ArrowRight className="w-5 h-5 text-[#606060] shrink-0" />}
+                  </button>
+
+                  {/* MOBILE CONTENT ACCORDION */}
+                  <div className={`xl:hidden overflow-hidden transition-all duration-300 ${isActive ? "max-h-[1500px] pb-5 opacity-100" : "max-h-0 opacity-0"}`}>
+                     <div className="flex flex-col bg-transparent pt-2">
+                        {/* Image */}
+                        <div className="w-full h-[160px] overflow-hidden rounded-sm bg-gray-100 mb-5">
+                          <img 
+                            src={service.image} 
+                            alt={service.title}
+                            className="w-full h-full object-cover object-center"
+                          />
+                        </div>
+                        {/* Description & View More */}
+                        <div className="mb-[25px]">
+                          <p className="text-[#606060] text-[14px] leading-relaxed inline">
+                            {service.description}{" "}
+                          </p>
+                          <Link 
+                            href="/"
+                            className="inline-flex items-center text-[14px] font-medium text-[#141414] underline underline-offset-4 decoration-1 whitespace-nowrap"
+                          >
+                            View more <ArrowUpRight size={14} className="shrink-0 ml-1" strokeWidth={1.5} />
+                          </Link>
+                        </div>
+                        
+                        {/* Service Included */}
+                        <p className="text-[#000000] font-semibold text-[15px] mb-[15px]">Service Included :</p>
+                        <div className="bg-[#EAEAEA] p-5 rounded-sm flex flex-col gap-[12px]">
+                          {service.features.map((feature, idx) => (
+                            <div key={idx} className="flex items-center gap-3">
+                              <Check className="w-5 h-5 text-[#141414] shrink-0" strokeWidth={1.5} />
+                              <span className="text-[#141414] text-[13px] font-medium underline underline-offset-4 decoration-1">{feature}</span>
+                            </div>
+                          ))}
+                        </div>
+                     </div>
+                  </div>
+                </div>
               );
             })}
           </div>
 
-          {/* Right Side: Active Service Card */}
-          <div className="w-full lg:w-[644px]">
-            <div className="relative bg-white lg:p-10 p-5 rounded-sm shadow-sm transition-transform duration-500 ease-in will-change-transform xl:h-[819px] flex flex-col">
+          {/* Right Side: Active Service Card (Desktop Only) */}
+          <div className="hidden xl:flex w-full lg:w-[644px]">
+            <div className="relative bg-white lg:p-10 p-5 rounded-sm shadow-sm transition-transform duration-500 ease-in will-change-transform xl:h-[819px] flex flex-col w-full">
               <div className="flex flex-col xl:w-auto bg-white flex-1">
                 
                 <div>
                   {/* Image */}
-                  <div className="w-full lg:h-[180px] overflow-hidden rounded-sm bg-gray-100">
+                  <div className="w-full h-[160px] lg:h-[180px] overflow-hidden rounded-sm bg-gray-100">
                     <img 
                       src={activeService.image} 
                       alt={activeService.title}
@@ -64,7 +102,7 @@ export function ServicesSection() {
                   {/* Title & View More */}
                   <div className="xl:flex items-start justify-between pt-5 pb-7">
                     <div className="flex flex-col">
-                      <h3 className="text-[20px] md:text-[22px] font-semibold text-[#141414]">
+                      <h3 className="text-[18px] sm:text-[20px] md:text-[22px] font-semibold text-[#141414]">
                         {activeService.title}
                       </h3>
                       <div className="w-[50px] h-[2px] bg-[#141414] mt-2.5"></div>
@@ -78,7 +116,7 @@ export function ServicesSection() {
                   </div>
 
                   {/* Description */}
-                  <p className="text-[#606060] text-[18px] leading-relaxed pb-[25px] font-light min-h-6">
+                  <p className="text-[#606060] text-[16px] sm:text-[18px] leading-relaxed pb-[25px] font-light min-h-6">
                     {activeService.description}
                   </p>
 
@@ -100,7 +138,7 @@ export function ServicesSection() {
                 <div className="mt-auto pt-[40px] flex items-center">
                   <Link 
                     href="/contact"
-                    className="inline-flex items-center justify-center border border-[#141414] w-[231px] h-[52px] text-[16px] font-medium text-[#000000] hover:bg-[#141414] hover:text-white transition-colors group"
+                    className="inline-flex items-center justify-center border border-[#141414] w-full sm:w-[231px] h-[52px] text-[16px] font-medium text-[#000000] hover:bg-[#141414] hover:text-white transition-colors group"
                   >
                     Book a meeting <ArrowRight size={18} className="shrink-0 ml-3 transition-transform group-hover:translate-x-1" strokeWidth={1.5} />
                   </Link>

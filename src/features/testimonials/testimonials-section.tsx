@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import { Container } from "@/components/ui/container";
-import { MoveLeft, MoveRight } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 
 const testimonials = [
   {
@@ -58,14 +58,14 @@ export function TestimonialsSection() {
         
         {/* Header */}
         <div className="flex flex-col mb-10 md:mb-[50px]">
-          <h2 className="text-white text-[40px] font-semibold">Client Success Stories</h2>
-          <p className="text-white text-[20px] font-normal mt-[6px]">
+          <h2 className="text-white text-[28px] sm:text-[32px] md:text-[40px] font-semibold leading-tight">Client Success Stories</h2>
+          <p className="text-white text-[16px] md:text-[20px] font-normal mt-[6px] leading-relaxed">
             See how we've helped businesses transform ideas into successful digital products and long-term growth.
           </p>
         </div>
 
           {/* Carousel Area */}
-          <div className="relative w-full h-[600px] md:h-[462px] mt-10 overflow-hidden">
+          <div className="relative w-full h-auto md:h-[462px] mt-8 overflow-hidden pb-12 md:pb-0">
             
             {/* Background Quotes */}
             <div className="absolute left-[-20px] md:left-[-120px] top-[100px] md:top-[180px] text-[#111111] text-[150px] md:text-[250px] leading-none font-serif select-none pointer-events-none z-0">
@@ -77,17 +77,17 @@ export function TestimonialsSection() {
 
             {/* Slider Track */}
             <div 
-              className="w-full h-full flex transition-transform duration-700 ease-in-out z-10 relative"
+              className="w-full md:h-full flex transition-transform duration-700 ease-in-out z-10 relative"
               style={{ transform: `translateX(-${currentIndex * 100}%)` }}
             >
               {testimonials.map((item, idx) => (
-                <div key={idx} className="w-full h-full flex-shrink-0 relative">
+                <div key={idx} className="w-full flex-shrink-0 relative flex flex-col md:block">
                   
                   {/* Image */}
                   <div 
-                    className="absolute right-0 top-0 w-[95%] md:w-[65%] lg:w-[60%] h-[300px] md:h-[100%] bg-gray-800"
+                    className="w-full md:absolute right-0 top-0 md:w-[65%] lg:w-[60%] h-[250px] sm:h-[300px] md:h-[100%] bg-gray-800"
                     style={{ 
-                      clipPath: "polygon(170px 0, 100% 0, 100% 100%, 0 100%, 0 170px)",
+                      clipPath: "polygon(60px 0, 100% 0, 100% 100%, 0 100%, 0 60px)",
                       backgroundImage: `url(${item.image})`,
                       backgroundSize: "cover",
                       backgroundPosition: "center"
@@ -95,14 +95,24 @@ export function TestimonialsSection() {
                   />
 
                   {/* Text Box */}
-                  <div className="absolute left-0 bottom-0 md:bottom-auto md:top-[170px] w-[95%] lg:w-[754px] md:w-[600px] lg:h-[292px] bg-[#141414] lg:p-10 md:p-[30px] sm:py-[22px] sm:px-[37px] p-6 shadow-2xl flex flex-col">
-                    <p className="text-white lg:text-[20px] md:text-[17px] text-[15px] leading-[1.8] font-light min-h-6 flex-1">
+                  <div className="w-full md:absolute left-0 md:top-[170px] lg:w-[754px] md:w-[600px] lg:h-[292px] bg-[#141414] lg:p-10 p-[25px] flex flex-col z-20 flex-1">
+                    <p className="text-white lg:text-[20px] md:text-[17px] text-[14px] sm:text-[15px] leading-[1.6] sm:leading-[1.8] font-light min-h-6 flex-1">
                       {item.quote}
                     </p>
                     
-                    <div className="mt-[35px] flex justify-between items-center">
-                      <h4 className="text-white font-semibold text-[16px]">{item.author}</h4>
+                    <div className="mt-[35px] flex justify-between items-center mb-6 md:mb-0">
+                      <h4 className="text-white font-semibold text-[15px] sm:text-[16px]">{item.author}</h4>
                       <span className="text-white font-semibold text-[14px]">{item.location}</span>
+                    </div>
+
+                    {/* Arrows (Mobile & Desktop) */}
+                    <div className="flex items-center justify-center md:justify-end gap-8 md:absolute md:bottom-10 md:right-10 pt-2 md:pt-0">
+                      <button onClick={handlePrev} className="text-[#a3a3a3] hover:text-white transition-colors">
+                        <ArrowLeft size={24} strokeWidth={1.5} />
+                      </button>
+                      <button onClick={handleNext} className="text-[#a3a3a3] hover:text-white transition-colors">
+                        <ArrowRight size={24} strokeWidth={1.5} />
+                      </button>
                     </div>
                   </div>
                   
@@ -110,16 +120,6 @@ export function TestimonialsSection() {
               ))}
             </div>
             
-            {/* Arrows */}
-            <div className="absolute right-0 bottom-0 z-30 flex items-center justify-end gap-5 lg:pr-10 md:pr-10 pr-5 pb-5">
-              <button onClick={handlePrev} className="text-[#a3a3a3] hover:text-white transition-colors">
-                <MoveLeft size={24} strokeWidth={1} />
-              </button>
-              <button onClick={handleNext} className="text-[#a3a3a3] hover:text-white transition-colors">
-                <MoveRight size={24} strokeWidth={1} />
-              </button>
-            </div>
-
           </div>
 
         </Container>

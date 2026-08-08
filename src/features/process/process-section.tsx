@@ -40,9 +40,9 @@ export function ProcessSection() {
       <Container className="w-full max-w-[1410px] mx-auto lg:px-[15px] sm:px-[30px] px-5">
         
         {/* Header */}
-        <div className="flex flex-col mb-12">
-          <h2 className="text-[#141414] text-[36px] font-semibold mb-3">Our work process</h2>
-          <p className="text-[#141414] text-[16px] font-normal">
+        <div className="flex flex-col mb-10 md:mb-12">
+          <h2 className="text-[#141414] text-[26px] md:text-[28px] font-semibold mb-2 leading-tight">Our work process</h2>
+          <p className="text-[#141414] text-[14px] md:text-[15px] font-light leading-relaxed max-w-[500px]">
             Our process proves our expertise and commitment to excellence.
           </p>
         </div>
@@ -53,22 +53,22 @@ export function ProcessSection() {
             <div key={idx} className="bg-white lg:py-[35px] lg:px-7 sm:p-5 p-5 flex flex-col items-start justify-start shadow-sm h-full group hover:bg-[#141414] transition-colors duration-300">
               
               {/* Number and Line */}
-              <div className="flex items-end mb-[20px]">
+              <div className="flex items-end mb-[20px] md:mb-[25px]">
                 <span 
-                  className="text-[50px] font-bold text-transparent leading-[40px] group-hover:[-webkit-text-stroke:1px_white] [-webkit-text-stroke:1px_#141414] transition-colors duration-300" 
+                  className="text-[40px] font-bold text-transparent leading-[36px] group-hover:[-webkit-text-stroke:1px_white] [-webkit-text-stroke:1px_#141414] transition-colors duration-300" 
                 >
                   {step.id}
                 </span>
-                <span className="text-[#141414] group-hover:text-white transition-colors duration-300 text-[32px] font-light ml-2 leading-[40px]">_</span>
+                <div className="w-[35px] h-[1.5px] bg-[#141414] group-hover:bg-white transition-colors duration-300 ml-2 mb-[4px]"></div>
               </div>
 
               {/* Title */}
-              <h3 className="text-[#141414] group-hover:text-white transition-colors duration-300 text-[18px] font-semibold md:mb-3 mb-3 md:mt-0 sm:mt-3 min-h-6">
+              <h3 className="text-[#141414] group-hover:text-white transition-colors duration-300 text-[15px] md:text-[16px] font-semibold md:mb-2.5 mb-2.5 md:mt-0 sm:mt-3 min-h-6">
                 {step.title}
               </h3>
 
               {/* Description */}
-              <p className="text-[#141414] group-hover:text-white transition-colors duration-300 text-[16px] leading-relaxed font-light min-h-6 m-0">
+              <p className="text-[#141414] group-hover:text-white transition-colors duration-300 text-[14px] leading-relaxed font-light m-0 xl:pr-4">
                 {step.description}
               </p>
               

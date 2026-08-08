@@ -89,30 +89,29 @@ export function HeroSection() {
       </div>
 
       {/* Inner Container */}
-      <div className="xl:px-20 lg:px-[120px] md:px-10 sm:px-0 px-0 z-10 w-full max-w-[1410px] mx-auto">
+      <div className="xl:px-20 lg:px-[120px] md:px-10 sm:px-0 px-0 z-10 w-full max-w-[1410px] mx-auto flex flex-col items-center">
         
         {/* Main Heading with Typewriter */}
-        <div className="min-h-6 lg:text-[55px] md:text-[45px] text-[32px] text-center text-white lg:leading-[70px] md:leading-[60px] leading-10 font-semibold max-w-[1220px] mx-auto">
-          Your Trusted AI Development <br className="hidden lg:block"/>
-          Partner - Delivering Smart Solutions For <br />
+        <div className="min-h-6 lg:text-[55px] md:text-[45px] sm:text-[32px] text-[20px] text-center text-white lg:leading-[70px] md:leading-[60px] sm:leading-10 leading-[30px] font-semibold max-w-[1220px] mx-auto px-6 md:px-0">
+          Your Trusted AI Development <br className="block lg:block"/>
+          Partner - Delivering Smart <br className="block md:hidden" /> Solutions For <br className="block md:hidden" />
           <TypewriterEffect />
         </div>
 
         {/* Subtitle Paragraph */}
-        <div className="xl:px-20 text-[16px] md:text-[20px] text-center mt-5 mb-14 text-white lg:leading-[35px] md:leading-[35px] leading-[26px] font-light w-full max-w-[1220px] mx-auto">
-          Empower your business with Vixora Labs' intelligent software solutions built for growth and innovation.<br className="hidden md:block"/>
+        <div className="text-[13px] sm:text-[16px] md:text-[20px] text-center mt-5 md:mt-5 mb-8 md:mb-14 text-white/90 lg:leading-[35px] md:leading-[35px] leading-[20px] sm:leading-[26px] font-normal w-full max-w-[340px] md:max-w-[1220px] mx-auto px-4 sm:px-0">
+          Empower your business with Vixora Labs' intelligent software solutions built for growth and innovation. 
           Start your digital transformation today with scalable, AI-powered technology.
         </div>
 
         {/* Call to Action Button */}
         <Link 
           href="/contact"
-          className="w-[250px] h-[52px] border border-white/20 text-white text-[18px] rounded-sm hover:bg-white/5 transition-colors flex items-center justify-center gap-3 group whitespace-nowrap mx-auto"
+          className="flex w-[260px] mx-auto h-[52px] border border-white text-white text-[15px] font-semibold rounded-none hover:bg-white hover:text-black transition-colors items-center justify-center gap-3 group mt-12 md:mt-16"
         >
           Book a meeting
           <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
         </Link>
-        
       </div>
 
       {/* Marquee Section positioned at the bottom of the Hero Section */}
@@ -126,9 +125,9 @@ export function HeroSection() {
           <div className="flex shrink-0 gap-10 sm:gap-20 items-center">
             {services.map((service, idx) => {
               return (
-                <div key={`g1-${idx}`} className="flex items-center gap-3 text-white">
-                  <span className="text-2xl">{service.emoji}</span>
-                  <span className="text-[20px] font-bold tracking-wide">{service.name}</span>
+                <div key={`g1-${idx}`} className="flex items-center gap-2 sm:gap-3 text-white">
+                  <span className="text-xl sm:text-2xl">{service.emoji}</span>
+                  <span className="text-[16px] sm:text-[20px] font-bold tracking-wide">{service.name}</span>
                 </div>
               );
             })}
@@ -137,9 +136,9 @@ export function HeroSection() {
           <div className="flex shrink-0 gap-10 sm:gap-20 items-center">
             {services.map((service, idx) => {
               return (
-                <div key={`g2-${idx}`} className="flex items-center gap-3 text-white">
-                  <span className="text-2xl">{service.emoji}</span>
-                  <span className="text-[20px] font-bold tracking-wide">{service.name}</span>
+                <div key={`g2-${idx}`} className="flex items-center gap-2 sm:gap-3 text-white">
+                  <span className="text-xl sm:text-2xl">{service.emoji}</span>
+                  <span className="text-[16px] sm:text-[20px] font-bold tracking-wide">{service.name}</span>
                 </div>
               );
             })}

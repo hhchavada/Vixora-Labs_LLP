@@ -13,7 +13,7 @@ export interface PageWrapperProps extends React.HTMLAttributes<HTMLElement> {
 export function PageWrapper({ children, className, ...props }: PageWrapperProps) {
   return (
     <main
-      className={cn("relative flex min-h-screen flex-col", className)}
+      className={cn("relative flex min-h-screen flex-col overflow-x-hidden w-full", className)}
       {...props}
     >
       {children}

@@ -8,21 +8,7 @@ export function AboutSection() {
   return (
     <section className="relative w-full bg-transparent text-white font-sans xl:py-20 lg:py-14 md:py-[60px] py-10 overflow-hidden">
       
-      {/* Subtle Background Grid starting below the intro text */}
-      <div 
-        className="absolute inset-x-0 top-[230px] bottom-0 z-0 pointer-events-none" 
-        style={{
-          backgroundImage: 'linear-gradient(to right, rgba(255, 255, 255, 0.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(255, 255, 255, 0.06) 1px, transparent 1px)',
-          backgroundSize: '120px 120px',
-          backgroundPosition: 'center 0'
-        }}
-        aria-hidden="true" 
-      />
-      
-      {/* 
-        Exact Codewinglet Flex Layout 
-        Container max-width 1410px 
-      */}
+      {/* Exact Codewinglet Flex Layout - Container max-width 1410px */}
       <Container className="relative z-10 w-full max-w-[1410px] mx-auto lg:px-[15px] sm:px-[30px] px-5 flex flex-col lg:flex-row justify-between items-stretch gap-12 lg:gap-0">
         
         {/* --- LEFT COLUMN (926px) --- */}
@@ -30,14 +16,14 @@ export function AboutSection() {
           
           {/* Top: Text Block */}
           <div className="flex flex-col justify-start">
-            <h2 className="text-[36px] font-bold tracking-tight text-white leading-tight">
+            <h2 className="text-[24px] md:text-[32px] lg:text-[36px] font-bold tracking-tight text-white leading-tight">
               {header.title}
             </h2>
-            <p className="text-[20px] text-gray-400 font-normal mt-[6px] mb-10">
+            <p className="text-[13px] md:text-[16px] lg:text-[20px] text-white font-bold mt-[6px] mb-8 sm:mb-10">
               {header.subtitle}
             </p>
-            <div className="flex flex-col text-[20px] text-gray-300 leading-relaxed font-normal lg:pr-[40px]">
-              <p className="pb-[22px]">
+            <div className="flex flex-col text-[14px] md:text-[16px] lg:text-[20px] text-gray-300 leading-relaxed font-normal lg:pr-[40px]">
+              <p className="pb-[18px] sm:pb-[22px]">
                 Welcome to <strong className="font-semibold text-white">Vixora Labs</strong>, your trusted partner for modern software development and AI-powered digital solutions. We specialize in strategy, design, and the development of scalable web, mobile, cloud, and AI applications that help businesses innovate and grow across industries.
               </p>
               <p>{header.description2}</p>
@@ -48,16 +34,16 @@ export function AboutSection() {
           <div className="flex flex-col lg:flex-row justify-between items-start mt-12 lg:mt-[109px]">
             
             {/* Stats Block (216px wide as per DevTools) */}
-            <div className="w-full lg:w-[216px] grid grid-cols-2 lg:block gap-4 md:gap-5 lg:gap-0 mt-5 mb-20 lg:mt-0 lg:mb-0">
+            <div className="w-full lg:w-[216px] grid grid-cols-2 lg:flex lg:flex-col gap-y-8 gap-x-4 lg:gap-0 mt-5 mb-16 lg:mt-0 lg:mb-0">
               {statistics.map((stat, idx) => (
                 <div 
                   key={idx}
-                  className="flex flex-col justify-center py-2 lg:py-[18px]"
+                  className="flex flex-col justify-start py-0 lg:py-[18px]"
                 >
-                  <div className="text-[30px] font-bold text-white flex items-center leading-tight">
+                  <div className="text-[28px] sm:text-[30px] font-bold text-white flex items-center leading-tight">
                     {stat.value}
                   </div>
-                  <p className="text-[18px] font-normal text-white min-h-[24px] mt-1">
+                  <p className="text-[14px] sm:text-[16px] font-normal text-gray-300 min-h-[24px] mt-1 text-left">
                     {stat.label}
                   </p>
                 </div>
@@ -74,10 +60,10 @@ export function AboutSection() {
                 />
               </div>
               <div className="flex flex-col justify-start mt-5">
-                <p className="text-[22px] font-semibold text-white leading-snug min-h-[24px]">
+                <p className="text-[18px] md:text-[22px] font-semibold text-white leading-snug min-h-[24px]">
                   {cards[0].title}
                 </p>
-                <p className="text-[16px] text-gray-400 leading-relaxed mt-[6px] min-h-[24px]">
+                <p className="text-[14px] md:text-[16px] text-gray-400 leading-relaxed mt-[6px] min-h-[24px]">
                   {cards[0].description}
                 </p>
               </div>
@@ -99,10 +85,10 @@ export function AboutSection() {
               />
             </div>
             <div className="flex flex-col justify-start mt-5">
-              <p className="text-[22px] font-semibold text-white leading-snug min-h-[24px]">
+              <p className="text-[18px] md:text-[22px] font-semibold text-white leading-snug min-h-[24px]">
                 {cards[1].title}
               </p>
-              <p className="text-[16px] text-gray-400 leading-relaxed mt-[6px] min-h-[24px]">
+              <p className="text-[14px] md:text-[16px] text-gray-400 leading-relaxed mt-[6px] min-h-[24px]">
                 {cards[1].description}
               </p>
             </div>
@@ -118,10 +104,10 @@ export function AboutSection() {
               />
             </div>
             <div className="flex flex-col justify-start mt-5">
-              <p className="text-[22px] font-semibold text-white leading-snug min-h-[24px]">
+              <p className="text-[18px] md:text-[22px] font-semibold text-white leading-snug min-h-[24px]">
                 {cards[2].title}
               </p>
-              <p className="text-[16px] text-gray-400 leading-relaxed mt-[6px] min-h-[24px]">
+              <p className="text-[14px] md:text-[16px] text-gray-400 leading-relaxed mt-[6px] min-h-[24px]">
                 {cards[2].description}
               </p>
             </div>

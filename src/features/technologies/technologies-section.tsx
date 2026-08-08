@@ -17,7 +17,7 @@ export function TechnologiesSection() {
         
         {/* Section Header */}
         <div className="mb-[41px]">
-          <h2 className="text-[#FFFFFF] text-[32px] sm:text-[28px] md:text-[36px] lg:text-[40px] font-semibold">
+          <h2 className="text-[#FFFFFF] text-[28px] sm:text-[32px] md:text-[36px] lg:text-[40px] font-semibold">
             Technologies We Master
           </h2>
           <p className="min-h-6 text-[#A0A0A0] mt-1.5 text-[16px] md:text-[18px] font-light">
@@ -29,15 +29,15 @@ export function TechnologiesSection() {
         <div className="flex flex-col xl:flex-row lg:mt-[50px] mt-10 gap-16">
           
           {/* Left Sidebar (Tabs) */}
-          <div className="w-full lg:w-[220px] shrink-0 flex flex-row xl:flex-col overflow-x-auto lg:overflow-visible no-scrollbar mb-8 lg:mb-0 border-b xl:border-b-0 border-[#222]">
+          <div className="w-full lg:w-[220px] shrink-0 flex flex-row lg:flex-col overflow-x-auto lg:overflow-visible no-scrollbar mb-8 lg:mb-0 border-b lg:border-b-0 border-[#333]">
             {technologiesData.map((tech) => (
               <div
                 key={tech.id}
                 onClick={() => setActiveTab(tech.id)}
-                className={`lg:pl-[30px] pb-[25px] pl-4 flex items-center cursor-pointer text-[18px] lg:text-[20px] whitespace-nowrap transition-colors duration-300 border-b-2 xl:border-b-0 xl:border-l-2 focus:outline-none ${
+                className={`lg:pl-[30px] lg:pb-[25px] pb-3 mr-6 sm:mr-8 lg:mr-0 flex items-center cursor-pointer text-[15px] sm:text-[16px] lg:text-[20px] whitespace-nowrap transition-colors duration-300 border-b-2 lg:border-b-0 lg:border-l-2 focus:outline-none -mb-[1px] lg:-mb-0 lg:-ml-[1px] ${
                   activeTab === tech.id
                     ? "border-white text-white font-medium"
-                    : "border-transparent lg:border-[#222] text-[#666666] hover:text-[#A0A0A0] font-light"
+                    : "border-transparent lg:border-[#333] text-[#666666] hover:text-[#A0A0A0] font-light"
                 }`}
               >
                 {tech.title}
@@ -49,7 +49,7 @@ export function TechnologiesSection() {
           <div className="flex-1 bg-[#141414] md:p-[30px] p-5 rounded-sm transition-transform duration-500 ease-in will-change-transform">
             
             {/* Heading is moved above the flex container so the image aligns with the description */}
-            <p className="min-h-6 md:text-[24px] text-[20px] text-[#FFFFFF] font-semibold mb-[30px] relative after:content-[''] after:absolute after:-bottom-[10px] after:left-0 after:w-[30px] after:h-[2px] after:bg-white">
+            <p className="min-h-6 text-[18px] sm:text-[20px] md:text-[24px] text-[#FFFFFF] font-semibold mb-[30px] relative after:content-[''] after:absolute after:-bottom-[10px] after:left-0 after:w-[30px] after:h-[2px] after:bg-white">
               {activeTech.heading}
             </p>
 
@@ -62,11 +62,11 @@ export function TechnologiesSection() {
                 </p>
 
                 {/* Icons Grid */}
-                <div className="flex flex-wrap gap-8 sm:gap-12 mt-auto">
+                <div className="grid grid-cols-3 gap-y-8 gap-x-2 sm:flex sm:flex-wrap sm:gap-8 lg:gap-12 mt-auto w-full">
                   {activeTech.technologies.map((tech) => (
-                    <div key={tech.name} className="flex flex-col items-center justify-center gap-1.5 w-[100px]">
-                      <tech.icon className="w-10 h-10 text-[#DDDDDD]" strokeWidth={1.5} />
-                      <span className="text-[13px] text-[#DDDDDD] font-light tracking-wide">{tech.name}</span>
+                    <div key={tech.name} className="flex flex-col items-center justify-center gap-2 sm:gap-1.5 w-full sm:w-[100px]">
+                      <tech.icon className="w-9 h-9 sm:w-10 sm:h-10 text-[#DDDDDD]" strokeWidth={1.5} />
+                      <span className="text-[12px] sm:text-[13px] text-[#DDDDDD] font-light tracking-wide text-center">{tech.name}</span>
                     </div>
                   ))}
                 </div>
@@ -74,14 +74,14 @@ export function TechnologiesSection() {
 
               {/* Image & Button Column */}
               <div className="w-full xl:w-[260px] shrink-0 flex flex-col lg:mt-0">
-                <div className="relative w-full aspect-[16/10] rounded-[4px] overflow-hidden mb-[15px]">
+                <div className="relative w-full aspect-[16/10] rounded-[4px] overflow-hidden mb-[15px] hidden xl:block">
                   <img 
                     src={activeTech.image}
                     alt={activeTech.heading}
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <Link href="/contact" className="w-full border border-white hover:bg-white transition-colors duration-300 rounded-[4px] py-[10px] flex items-center justify-center gap-2 group">
+                <Link href="/contact" className="w-full border border-white hover:bg-white transition-colors duration-300 rounded-[4px] py-[10px] flex items-center justify-center gap-2 group mt-8 xl:mt-0">
                   <span className="text-white text-[14px] font-medium group-hover:text-black transition-colors">Hire developer</span>
                   <ArrowRight size={18} strokeWidth={1.5} className="text-white group-hover:text-black transition-colors shrink-0" />
                 </Link>

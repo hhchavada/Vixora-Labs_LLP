@@ -14,7 +14,7 @@ export default function HomePage() {
   return (
     <>
       <AnnouncementBar>
-        <span className="font-bold">🚀 Let's Build the Future Together 🚀</span>
+        <span className="font-bold">🎉 We're Hiring! Join Our Team 🚀</span>
         <a href="#" className="text-[#6c2bd9] font-bold ml-2 hover:underline">Apply Here</a>
       </AnnouncementBar>
       <Navbar />
