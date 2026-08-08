@@ -25,7 +25,7 @@ export function Navbar() {
       <header
         id="header"
         className={cn(
-          "sticky top-[48px] flex items-center z-50 w-full sm:py-5 md:py-0 lg:py-0 lg:px-20 transition-all duration-300",
+          "fixed top-[48px] flex items-center z-50 w-full sm:py-5 md:py-0 lg:py-0 lg:px-20 transition-all duration-300",
           isScrolled ? "bg-[#141414] shadow-md" : "bg-transparent"
         )}
       >

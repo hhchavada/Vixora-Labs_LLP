@@ -114,8 +114,8 @@ export function Footer() {
               <Phone className="w-[18px] h-[18px] text-white/90 mt-[2px] shrink-0" strokeWidth={1.5} />
               <div className="flex flex-col gap-1.5">
                 <span className="text-white text-[15px] font-normal">Contact us :</span>
-                <span className="hover:text-white transition-colors cursor-pointer text-[15px]">+91 81608 68310 (Jobs)</span>
-                <span className="hover:text-white transition-colors cursor-pointer text-[15px]">+91 83201 11741 (Inquiry)</span>
+                <span className="hover:text-white transition-colors cursor-pointer text-[15px]">+91 87809 47319 (Jobs)</span>
+                <span className="hover:text-white transition-colors cursor-pointer text-[15px]">+91 70418 43621 (Inquiry)</span>
               </div>
             </div>
 

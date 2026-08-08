@@ -122,8 +122,8 @@
   --animate-marquee: marquee 30s linear infinite;
 
   @keyframes marquee {
-    0% { transform: translate3d(0, 0, 0); }
-    100% { transform: translate3d(calc(-50% - 1.25rem), 0, 0); } /* -50% minus half gap */
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-50% - 1.25rem)); }
   }
 }
 

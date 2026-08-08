@@ -8,6 +8,17 @@ export function AboutSection() {
   return (
     <section className="relative w-full bg-transparent text-white font-sans xl:py-20 lg:py-14 md:py-[60px] py-10 overflow-hidden">
       
+      {/* Subtle Background Grid starting below the intro text */}
+      <div 
+        className="absolute inset-x-0 top-[230px] bottom-0 z-0 pointer-events-none" 
+        style={{
+          backgroundImage: 'linear-gradient(to right, rgba(255, 255, 255, 0.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(255, 255, 255, 0.06) 1px, transparent 1px)',
+          backgroundSize: '120px 120px',
+          backgroundPosition: 'center 0'
+        }}
+        aria-hidden="true" 
+      />
+      
       {/* Exact Codewinglet Flex Layout - Container max-width 1410px */}
       <Container className="relative z-10 w-full max-w-[1410px] mx-auto lg:px-[15px] sm:px-[30px] px-5 flex flex-col lg:flex-row justify-between items-stretch gap-12 lg:gap-0">
         

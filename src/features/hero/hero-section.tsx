@@ -74,19 +74,32 @@ const services = [
 
 export function HeroSection() {
   return (
-    <div className="relative z-10 bg-transparent mb-0 md:h-[calc(100vh-156px)] h-[calc(100vh-170px)] flex items-center justify-center">
+    <div className="relative z-10 bg-transparent mb-0 md:h-screen h-[100dvh] flex items-center justify-center -mt-[126px] md:-mt-[138px] lg:-mt-[134px] pt-[126px] md:pt-[138px] lg:pt-[134px]">
       
-      {/* Background is clean as per Codewinglet reference */}
-      <div className="absolute inset-0 pointer-events-none -z-10 bg-black/20" />
+      {/* Large Background Glow / Concentric Circles Animation */}
+      <div className="absolute inset-0 pointer-events-none -z-10 flex items-center justify-center">
+        <div className="hero-glow-box absolute">
+          <span style={{ animationDelay: "1s" }}></span>
+          <span style={{ animationDelay: "2s" }}></span>
+          <span style={{ animationDelay: "3s" }}></span>
+          <span style={{ animationDelay: "4s" }}></span>
+          <span style={{ animationDelay: "5s" }}></span>
+          <span style={{ animationDelay: "6s" }}></span>
+        </div>
+      </div>
 
       {/* Inner Container */}
       <div className="xl:px-20 lg:px-[120px] md:px-10 sm:px-0 px-0 z-10 w-full max-w-[1410px] mx-auto flex flex-col items-center">
         
         {/* Main Heading with Typewriter */}
-        <div className="min-h-6 lg:text-[55px] md:text-[45px] sm:text-[32px] text-[20px] text-center text-white lg:leading-[70px] md:leading-[60px] sm:leading-10 leading-[30px] font-semibold max-w-[1220px] mx-auto px-6 md:px-0">
-          Your Trusted AI Development <br className="block lg:block"/>
-          Partner - Delivering Smart <br className="block md:hidden" /> Solutions For <br className="block md:hidden" />
-          <TypewriterEffect />
+        <div className="min-h-6 lg:text-[55px] md:text-[45px] sm:text-[32px] text-[20px] text-center text-white lg:leading-[70px] md:leading-[60px] sm:leading-10 leading-[30px] font-semibold max-w-[1220px] mx-auto px-6 md:px-0 flex flex-col items-center">
+          <div>
+            Your Trusted AI Development <br className="hidden lg:block"/>
+            Partner - Delivering Smart Solutions For
+          </div>
+          <div>
+            <TypewriterEffect />
+          </div>
         </div>
 
         {/* Subtitle Paragraph */}

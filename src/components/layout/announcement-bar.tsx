@@ -11,7 +11,7 @@ export function AnnouncementBar({ children, className }: AnnouncementBarProps) {
   return (
     <div
       className={cn(
-        "bg-white font-light h-[48px] md:h-[40px] w-full px-4 sticky top-0 z-[60] flex items-center justify-center overflow-hidden",
+        "bg-white font-light h-[48px] w-full px-4 sticky top-0 z-[60] flex items-center justify-center overflow-hidden",
         className
       )}
     >
