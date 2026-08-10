@@ -12,7 +12,7 @@ export function CareerHero() {
         backgroundSize: '30px 30px',
       }}
     >
-      <div className="container w-full lg:px-[15px] sm:px-[30px] px-5 mx-auto 2xl:max-w-[1516px] xl:max-w-[1200px] pt-12 lg:pt-20 pb-0 md:pb-12 lg:pb-20">
+      <div className="container w-full lg:px-[15px] sm:px-[30px] px-5 mx-auto 2xl:max-w-[1516px] xl:max-w-[1200px] pt-12 lg:pt-20 pb-10 md:pb-12 lg:pb-20">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-0">
           
           {/* Left Content */}
@@ -37,8 +37,8 @@ export function CareerHero() {
           </div>
 
           {/* Right Image */}
-          <div className="w-full lg:flex-1 relative flex justify-center lg:justify-end mt-8 md:mt-0">
-            <div className="relative w-[calc(100%+40px)] -mx-5 md:mx-0 md:w-full max-w-none md:max-w-[600px] lg:max-w-none h-[241px] md:h-auto md:aspect-[4/3] lg:w-[650px] lg:h-[500px] rounded-none md:rounded-lg overflow-hidden md:shadow-2xl">
+          <div className="w-full lg:flex-1 relative flex justify-center lg:justify-end md:mt-0">
+            <div className="relative w-[calc(100%+40px)] -mx-5 md:mx-0 md:w-full max-w-none md:max-w-[600px] lg:max-w-none aspect-square sm:aspect-[4/3] md:aspect-[4/3] lg:w-[650px] lg:h-[500px] rounded-none md:rounded-lg overflow-hidden md:shadow-2xl">
               <Image 
                 src="/images/career-hero.png"
                 alt="Vixora Labs Career"
