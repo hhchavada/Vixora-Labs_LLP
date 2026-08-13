@@ -20,7 +20,7 @@ export default function AboutPage() {
         <AboutHero />
         <AboutStats />
         <AboutWhyChoose />
-        <AboutDirectors />
+        {/* <AboutDirectors /> */}
         <AboutVisionMission />
       </PageWrapper>
       <Footer />

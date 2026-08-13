@@ -27,7 +27,7 @@ export function Navbar() {
   const shouldHide = isScrolled && direction === "down" && !isMobileMenuOpen;
   
   // Force dark background on pages that have a light background at the top
-  const forceDarkBg = pathname === "/terms" || pathname === "/privacy" || pathname === "/about" || pathname === "/career";
+  const forceDarkBg = pathname === "/terms" || pathname === "/privacy" || pathname === "/about" || pathname === "/career" || pathname === "/technology";
 
   return (
     <>
